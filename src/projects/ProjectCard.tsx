@@ -1,3 +1,5 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
 import { Project } from './Project'
 
 const formatDescription = (description: string): string =>
@@ -19,11 +21,14 @@ function ProjectCard(props: ProjectCardProps) {
     <div className="card">
       <img src={project.imageUrl} alt={project.name} />
       <section className="section dark">
-        <h5 className="strong">
-          <strong>{project.name}</strong>
-        </h5>
-        <p>{formatDescription(project.description)}</p>
-        <p>Budget : {project.budget.toLocaleString()}</p>
+        <Link to={'/projects/' + project.id}>
+          <h5 className="strong">
+            <strong>{project.name}</strong>
+          </h5>
+          <p>{formatDescription(project.description)}</p>
+          <p>Budget : {project.budget.toLocaleString()}</p>
+        </Link>
+
         <button
           className="bordered"
           onClick={() => {

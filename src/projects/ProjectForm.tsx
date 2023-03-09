@@ -1,4 +1,4 @@
-import { SyntheticEvent, useState } from 'react'
+import React, { SyntheticEvent, useState } from 'react'
 import { Project } from './Project'
 
 interface ProjectFormProps {
